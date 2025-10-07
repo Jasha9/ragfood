@@ -20,11 +20,25 @@ collection = chroma_client.get_or_create_collection(name=COLLECTION_NAME)
 
 # Ollama embedding function
 def get_embedding(text):
-    response = requests.post("http://localhost:11434/api/embeddings", json={
-        "model": EMBED_MODEL,
-        "prompt": text
-    })
-    return response.json()["embedding"]
+    try:
+        response = requests.post("http://localhost:11434/api/embeddings", json={
+            "model": EMBED_MODEL,
+            "prompt": text
+        })
+        response.raise_for_status()  # Raise an exception for bad status codes
+        result = response.json()
+        
+        if "embedding" not in result:
+            raise ValueError(f"No embedding in response: {result}")
+        
+        embedding = result["embedding"]
+        if not embedding or len(embedding) == 0:
+            raise ValueError("Empty embedding returned")
+            
+        return embedding
+    except Exception as e:
+        print(f"❌ Error getting embedding for text: '{text[:50]}...' Error: {e}")
+        raise
 
 # Add only new items
 existing_ids = set(collection.get()['ids'])
@@ -52,29 +66,30 @@ else:
 
 # RAG query
 def rag_query(question):
-    # Step 1: Embed the user question
-    q_emb = get_embedding(question)
+    try:
+        # Step 1: Embed the user question
+        q_emb = get_embedding(question)
 
-    # Step 2: Query the vector DB
-    results = collection.query(query_embeddings=[q_emb], n_results=3)
+        # Step 2: Query the vector DB
+        results = collection.query(query_embeddings=[q_emb], n_results=3)
 
-    # Step 3: Extract documents
-    top_docs = results['documents'][0]
-    top_ids = results['ids'][0]
+        # Step 3: Extract documents
+        top_docs = results['documents'][0]
+        top_ids = results['ids'][0]
 
-    # Step 4: Show friendly explanation of retrieved documents
-    print("\n🧠 Retrieving relevant information to reason through your question...\n")
+        # Step 4: Show friendly explanation of retrieved documents
+        print("\n🧠 Retrieving relevant information to reason through your question...\n")
 
-    for i, doc in enumerate(top_docs):
-        print(f"🔹 Source {i + 1} (ID: {top_ids[i]}):")
-        print(f"    \"{doc}\"\n")
+        for i, doc in enumerate(top_docs):
+            print(f"🔹 Source {i + 1} (ID: {top_ids[i]}):")
+            print(f"    \"{doc}\"\n")
 
-    print("📚 These seem to be the most relevant pieces of information to answer your question.\n")
+        print("📚 These seem to be the most relevant pieces of information to answer your question.\n")
 
-    # Step 5: Build prompt from context
-    context = "\n".join(top_docs)
+        # Step 5: Build prompt from context
+        context = "\n".join(top_docs)
 
-    prompt = f"""Use the following context to answer the question.
+        prompt = f"""Use the following context to answer the question.
 
 Context:
 {context}
@@ -82,23 +97,37 @@ Context:
 Question: {question}
 Answer:"""
 
-    # Step 6: Generate answer with Ollama
-    response = requests.post("http://localhost:11434/api/generate", json={
-        "model": LLM_MODEL,
-        "prompt": prompt,
-        "stream": False
-    })
+        # Step 6: Generate answer with Ollama
+        response = requests.post("http://localhost:11434/api/generate", json={
+            "model": LLM_MODEL,
+            "prompt": prompt,
+            "stream": False
+        })
 
-    # Step 7: Return final result
-    return response.json()["response"].strip()
+        # Step 7: Return final result
+        return response.json()["response"].strip()
+    except Exception as e:
+        print(f"❌ Error during RAG query: {e}")
+        return "Sorry, I encountered an error while processing your question. Please try again."
 
 
 # Interactive loop
 print("\n🧠 RAG is ready. Ask a question (type 'exit' to quit):\n")
 while True:
-    question = input("You: ")
-    if question.lower() in ["exit", "quit"]:
-        print("👋 Goodbye!")
+    try:
+        question = input("You: ")
+        if question.lower() in ["exit", "quit"]:
+            print("👋 Goodbye!")
+            break
+        if question.strip() == "":
+            print("Please ask a question.")
+            continue
+        answer = rag_query(question)
+        print("🤖:", answer)
+        print()  # Add blank line for better formatting
+    except KeyboardInterrupt:
+        print("\n\n👋 Goodbye!")
         break
-    answer = rag_query(question)
-    print("🤖:", answer)
+    except Exception as e:
+        print(f"❌ Unexpected error: {e}")
+        print("Please try again or type 'exit' to quit.")
