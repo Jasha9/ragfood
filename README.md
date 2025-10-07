@@ -2,12 +2,10 @@
 
 
 
-**Developer:** Jasha - AI Engineering Student  **Developer:** Jasha - AI Engineering Student  
+**Developer:** Jashan - AI Engineering Student 
 
-**Project:** Week 1 - Retrieval-Augmented Generation (RAG) System Enhancement  **Project:** Week 1 - Retrieval-Augmented Generation (RAG) System Enhancement  
-
-**Repository:** Enhanced Global Food Database with Cultural Insights**Repository:** Enhanced Global Food Database with Cultural Insights
-
+**Project:** Week 1 - Retrieval-Augmented Generation (RAG) System Enhancement  
+**Repository:** Enhanced Global Food Database with Cultural Insights
 
 
 ## 🎯 Project Customization Overview## 🎯 Project Customization Overview
@@ -394,5 +392,5 @@ This project is open-source and available under the MIT License.
 
 ---
 
-**Built with ❤️ by Jasha | AI Engineering Student | October 2025**  
+**Built with ❤️ by Jashan | AI Engineering Student | October 2025**  
 *Enhancing cultural representation in AI systems, one dish at a time*
