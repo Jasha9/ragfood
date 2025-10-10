@@ -6,12 +6,12 @@ from upstash_vector import Index
 from groq import Groq
 
 # Load environment variables
-load_dotenv('.env')
+load_dotenv('../.env')
 
 # Manual fallback for environment variables
 if not os.getenv("UPSTASH_VECTOR_REST_URL"):
     try:
-        with open('.env', 'r') as f:
+        with open('../.env', 'r') as f:
             for line in f:
                 if line.strip() and not line.startswith('#') and '=' in line:
                     key, value = line.strip().split('=', 1)
@@ -21,7 +21,7 @@ if not os.getenv("UPSTASH_VECTOR_REST_URL"):
         pass
 
 # Constants (updated for Groq)
-JSON_FILE = "foods.json"
+JSON_FILE = "../data/food_data.json"
 LLM_MODEL = "llama-3.1-8b-instant"  # Groq's fast model
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
@@ -72,7 +72,10 @@ if existing_count == 0:
             {
                 "region": item.get("region", "unknown"),
                 "type": item.get("type", "general"),
-                "original_text": item["text"]  # Store original for retrieval
+                "original_text": item["text"],  # Store original for retrieval
+                "cultural_significance": item.get("cultural_significance", ""),
+                "dietary": item.get("dietary", []),
+                "allergens": item.get("allergens", [])
             }
         ))
 
@@ -165,7 +168,7 @@ Answer:"""}
 
 
 # Interactive loop with Groq Cloud API
-print("\n🧠 RAG is ready with Groq Cloud API! Ask a question (type 'exit' to quit):\n")
+print("\n🧠 Cloud RAG System (Upstash + Groq) ready! Ask a question (type 'exit' to quit):\n")
 while True:
     try:
         question = input("You: ")

@@ -3,7 +3,6 @@ import json
 import requests
 from dotenv import load_dotenv
 from upstash_vector import Index
-from groq import Groq
 
 # Load environment variables
 load_dotenv('.env')
@@ -20,22 +19,9 @@ if not os.getenv("UPSTASH_VECTOR_REST_URL"):
     except FileNotFoundError:
         pass
 
-# Constants (updated for Groq)
+# Constants (keeping original naming for compatibility)
 JSON_FILE = "foods.json"
-LLM_MODEL = "llama-3.1-8b-instant"  # Groq's fast model
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
-
-# Initialize Groq client
-if not GROQ_API_KEY:
-    print("❌ Missing GROQ_API_KEY in .env file")
-    exit(1)
-
-try:
-    groq_client = Groq(api_key=GROQ_API_KEY)
-    print("✅ Groq Cloud API client initialized successfully!")
-except Exception as e:
-    print(f"❌ Failed to initialize Groq client: {e}")
-    exit(1)
+LLM_MODEL = "llama3.2"
 
 # Load data
 with open(JSON_FILE, "r", encoding="utf-8") as f:
@@ -86,7 +72,7 @@ if existing_count == 0:
 else:
     print("✅ All documents already in Upstash Vector.")
 
-# RAG query function with Groq Cloud API
+# RAG query function (keeping exact same interface and output format)
 def rag_query(question):
     try:
         # Step 1: Query the vector DB (Upstash handles embedding automatically)
@@ -122,50 +108,30 @@ def rag_query(question):
         # Step 4: Build prompt from context (same as original)
         context = "\n".join(top_docs)
 
-        # Step 5: Generate answer with Groq Cloud API
-        try:
-            completion = groq_client.chat.completions.create(
-                model=LLM_MODEL,
-                messages=[
-                    {"role": "system", "content": "You are a helpful food expert. Use the provided context to answer questions about food accurately and concisely. Keep your responses informative but not too long."},
-                    {"role": "user", "content": f"""Use the following context to answer the question.
+        prompt = f"""Use the following context to answer the question.
 
 Context:
 {context}
 
 Question: {question}
-Answer:"""}
-                ],
-                temperature=0.7,
-                max_completion_tokens=500,
-                top_p=1.0,
-                stream=False
-            )
-            
-            # Step 6: Return final result
-            response_text = completion.choices[0].message.content.strip()
-            
-            # Log usage for monitoring (optional)
-            usage = completion.usage
-            print(f"🔍 Groq usage - Input tokens: {usage.prompt_tokens}, Output tokens: {usage.completion_tokens}")
-            
-            return response_text
-        
-        except Exception as groq_error:
-            print(f"❌ Groq API error: {groq_error}")
-            # Fallback response using context
-            if top_docs:
-                return f"Based on the available information: {top_docs[0][:200]}..."
-            else:
-                return "I couldn't find relevant information to answer your question."
-            
+Answer:"""
+
+        # Step 5: Generate answer with Ollama (exact same as original)
+        response = requests.post("http://localhost:11434/api/generate", json={
+            "model": LLM_MODEL,
+            "prompt": prompt,
+            "stream": False
+        })
+
+        # Step 6: Return final result (same as original)
+        return response.json()["response"].strip()
     except Exception as e:
         print(f"❌ Error during RAG query: {e}")
         return "Sorry, I encountered an error while processing your question. Please try again."
 
 
-# Interactive loop with Groq Cloud API
-print("\n🧠 RAG is ready with Groq Cloud API! Ask a question (type 'exit' to quit):\n")
+# Interactive loop (EXACT same as original)
+print("\n🧠 RAG is ready. Ask a question (type 'exit' to quit):\n")
 while True:
     try:
         question = input("You: ")
