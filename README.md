@@ -4,7 +4,98 @@ A modern Retrieval-Augmented Generation (RAG) system powered by **Groq Cloud API
 
 ## 🚀 Quick Start
 
+<<<<<<< HEAD
 ### Prerequisites
+=======
+**Developer:** Jashan - AI Engineering Student 
+
+**Project:** Week 1 - Retrieval-Augmented Generation (RAG) System Enhancement  
+**Repository:** Enhanced Global Food Database with Cultural Insights
+
+
+## 🎯 Project Customization Overview## 🎯 Project Customization Overview
+
+
+
+This project represents a comprehensive enhancement of a Retrieval-Augmented Generation (RAG) system focused on global cuisine and food knowledge. The original system has been significantly expanded with 15 new carefully curated food items, improved error handling, and enhanced user experience features. The system now provides detailed cultural, nutritional, and culinary insights about foods from around the world.This project represents a comprehensive enhancement of a Retrieval-Augmented Generation (RAG) system focused on global cuisine and food knowledge. The original system has been significantly expanded with 15 new carefully curated food items, improved error handling, and enhanced user experience features. The system now provides detailed cultural, nutritional, and culinary insights about foods from around the world.
+
+
+
+**Enhanced Features:**---
+
+- ✅ **90 total food items** (expanded from 75)
+
+- ✅ **Robust error handling** with graceful failure recovery## 📄 `README.md`
+
+- ✅ **Cultural cuisine representation** from 20+ countries
+
+- ✅ **Comprehensive nutritional data** and dietary classifications````markdown
+
+- ✅ **Enhanced user experience** with better formatting and interactions# 🧠 RAG-Food: Simple Retrieval-Augmented Generation with ChromaDB + Ollama
+
+
+
+---This is a **minimal working RAG (Retrieval-Augmented Generation)** demo using:
+
+
+
+## 🆕 15 New Food Items Added- ✅ Local LLM via [Ollama](https://ollama.com/)
+
+- ✅ Local embeddings via `mxbai-embed-large`
+
+### 🇵🇱 Cultural/Regional Cuisine (Polish Heritage)- ✅ [ChromaDB](https://www.trychroma.com/) as the vector database
+
+1. **Borscht** - Traditional beetroot soup with deep cultural significance, rich in folate and vitamin C- ✅ A simple food dataset in JSON (Indian foods, fruits, etc.)
+
+2. **Pierogies** - Classic Polish dumplings with various fillings, representing family traditions
+
+3. **Golumpki** - Stuffed cabbage rolls, a Sunday dinner staple with balanced nutrition---
+
+4. **Kielbasa** - Traditional smoked Polish sausage, high in protein with distinctive flavor
+
+5. **Sernik** - Polish cheesecake made with twaróg, an Easter celebration dessert## 🎯 What This Does
+
+
+
+### 🥗 Healthy Superfood OptionsThis app allows you to ask questions like:
+
+6. **Quinoa Buddha Bowl** - Complete protein superfood bowl with colorful vegetables and healthy fats
+
+7. **Açaí Bowl** - Brazilian antioxidant-rich breakfast with anti-inflammatory benefits- “Which Indian dish uses chickpeas?”
+
+8. **Chia Pudding** - Ancient superfood providing omega-3s, fiber, and sustained energy- “What dessert is made from milk and soaked in syrup?”
+
+9. **Kale and Sweet Potato Salad** - Vitamin-packed modern salad with farm-to-table philosophy- “What is masala dosa made of?”
+
+10. **Green Smoothie Bowl** - Nutrient-dense breakfast supporting detoxification and immune function
+
+It **does not rely on the LLM’s built-in memory**. Instead, it:
+
+### 🌍 International Culinary Classics
+
+11. **Paella** - Spain's iconic rice dish from Valencia with saffron and socarrat technique1. **Embeds your custom text data** (about food) using `mxbai-embed-large`
+
+12. **Coq au Vin** - French braised chicken showcasing wine-based cooking mastery2. Stores those embeddings in **ChromaDB**
+
+13. **Thai Green Curry** - Authentic curry with traditional paste-making techniques3. For any question, it:
+
+14. **Osso Buco** - Italian braised veal shanks from Milan with rich marrow flavors   - Embeds your question
+
+15. **Moroccan Tagine** - North African slow-cooked stew with complex spice blends   - Finds relevant context via similarity search
+
+   - Passes that context + question to a local LLM (`llama3.2`)
+
+---4. Returns a natural-language answer grounded in your data.
+
+
+
+## 🚀 Installation and Setup Instructions---
+
+
+
+### Prerequisites## 📦 Requirements
+
+>>>>>>> 09dd03cca99b9566289b421d388bab7ffccf4c49
 - Python 3.8+
 - Internet connection
 
@@ -186,4 +277,9 @@ This project is licensed under the MIT License.
 
 ---
 
+<<<<<<< HEAD
 **Status**: ✅ Production Ready | **Last Updated**: October 2025
+=======
+**Built with ❤️ by Jashan | AI Engineering Student | October 2025**  
+*Enhancing cultural representation in AI systems, one dish at a time*
+>>>>>>> 09dd03cca99b9566289b421d388bab7ffccf4c49
