@@ -8,28 +8,27 @@
 
 ### **1️⃣ GitHub Repository URL with Both Local and Cloud Versions**
 - **Repository URL**: https://github.com/Jasha9/ragfood
-- **Main Branch**: `main` (original local version)
-- **Submission Branch**: `cloud-migration` (enhanced cloud implementation)
-- **Direct Link**: https://github.com/Jasha9/ragfood/tree/cloud-migration
+- **Main Branch**: `main` (complete project with both local and cloud versions)
+- **Direct Link**: https://github.com/Jasha9/ragfood
 
 ### **2️⃣ MIGRATION_PLAN.md - AI-Assisted Design Process**
-- **Direct Link**: https://github.com/Jasha9/ragfood/blob/cloud-migration/docs/MIGRATION_PLAN.md
+- **Direct Link**: https://github.com/Jasha9/ragfood/blob/main/docs/MIGRATION_PLAN.md
 - **Content**: Complete AI-assisted architecture design and migration strategy
 - **Highlights**: Technology selection, performance optimization, quality assurance
 
 ### **3️⃣ Live Demonstration Materials**
-- **Demo Script**: https://github.com/Jasha9/ragfood/blob/cloud-migration/scripts/live_demonstration.py
-- **Project Showcase**: https://github.com/Jasha9/ragfood/blob/cloud-migration/scripts/demo_project.py
-- **Database Verification**: https://github.com/Jasha9/ragfood/blob/cloud-migration/scripts/verify_database.py
+- **Demo Script**: https://github.com/Jasha9/ragfood/blob/main/scripts/live_demonstration.py
+- **Project Showcase**: https://github.com/Jasha9/ragfood/blob/main/scripts/demo_project.py
+- **Database Verification**: https://github.com/Jasha9/ragfood/blob/main/scripts/verify_database.py
 - **Results**: 67% performance improvement demonstrated
 
 ### **4️⃣ Performance Comparison Report**
-- **Direct Link**: https://github.com/Jasha9/ragfood/blob/cloud-migration/docs/PERFORMANCE_COMPARISON_REPORT.md
+- **Direct Link**: https://github.com/Jasha9/ragfood/blob/main/docs/PERFORMANCE_COMPARISON_REPORT.md
 - **Results**: 67% faster responses, 99.8% cost reduction, unlimited scaling
 - **Analysis**: Comprehensive metrics across all performance dimensions
 
 ### **5️⃣ Enhanced Food Database (110 Items - 314% Over Requirement)**
-- **Direct Link**: https://github.com/Jasha9/ragfood/blob/cloud-migration/data/food_data.json
+- **Direct Link**: https://github.com/Jasha9/ragfood/blob/main/data/food_data.json
 - **Items**: 110 comprehensive food items (vs 35+ required)
 - **Quality**: 54 cultural regions, 17 dietary classifications
 
@@ -68,7 +67,7 @@
 ## 🎯 **Repository Structure Overview**
 
 ```
-https://github.com/Jasha9/ragfood/tree/cloud-migration
+https://github.com/Jasha9/ragfood
 ├── 📁 local-version/           # Original ChromaDB + Ollama
 ├── 📁 cloud-version/          # New Upstash + Groq
 ├── 📁 data/                   # Enhanced 110-item database
@@ -102,5 +101,5 @@ Your **RAG Food Assistant Cloud Migration Showcase** is now complete and availab
 
 ---
 
-*Submission completed by Jasha9 | October 10, 2025*  
-*Repository: https://github.com/Jasha9/ragfood/tree/cloud-migration*
+*Submission completed by Jasha9 | October 15, 2025*  
+*Repository: https://github.com/Jasha9/ragfood*
