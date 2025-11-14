@@ -903,5 +903,57 @@
   "cultural_significance": "Punjabi hospitality and the philosophy of cooking with love and patience",
   "dietary": ["vegetarian", "contains dairy"],
   "allergens": ["milk"]
+},
+{
+  "id": "111",
+  "text": "Peruvian Ceviche, the crown jewel of Lima's coastal cuisine, represents one of the world's most elegant expressions of seafood preparation where chemistry meets culinary artistry. This iconic dish consists of the freshest raw fish, typically sea bass or flounder, 'cooked' through acid denaturation using tiger's milk (leche de tigre) - a potent marinade of fresh lime juice, ají amarillo chilies, red onions, garlic, and cilantro. The technique dates back to pre-Columbian civilizations but evolved with Spanish and Japanese influences, particularly from Nikkei cuisine. The fish must be impeccably fresh, cut into precise cubes, and marinated for just 10-15 minutes to achieve the perfect texture where proteins firm up without becoming rubbery. Traditional accompaniments include sweet potato, corn kernels, and sometimes cancha (toasted corn nuts). The leche de tigre is so revered that many consider it a hangover cure and drink it separately. Ceviche provides lean protein, vitamin C from citrus, and capsaicin from chilies while representing Peru's biodiversity and cultural fusion. This dish embodies the Peruvian philosophy of respecting ingredients' natural flavors while showcasing technical precision.",
+  "region": "Peru - Pacific Coast",
+  "type": "Raw Fish Dish",
+  "origin": "Pre-Columbian Peru, refined in modern Lima",
+  "ingredients": ["fresh white fish", "lime juice", "ají amarillo", "red onion", "garlic", "cilantro", "sweet potato", "corn"],
+  "preparation": "Acid-marinated raw fish with precise timing",
+  "nutrition": "Lean protein, vitamin C, antioxidants, minimal processing preserves nutrients",
+  "cultural_significance": "Symbol of Peruvian culinary excellence and respect for ocean bounty",
+  "dietary": ["pescatarian", "gluten-free", "dairy-free"],
+  "allergens": ["fish"]
+},
+{
+  "id": "112",
+  "text": "Ethiopian Injera with Doro Wat represents the heart and soul of Ethiopian communal dining, where a fermented sourdough flatbread serves as both plate and utensil for an intensely spiced chicken stew that embodies thousands of years of culinary tradition. Injera, made from teff flour (an ancient Ethiopian grain), undergoes a 3-4 day fermentation process creating its characteristic tangy flavor and spongy, bubble-filled texture perfect for absorbing stews. Doro Wat, Ethiopia's national dish, features chicken pieces slow-cooked in berbere spice blend - a complex mixture of over 16 spices including chilies, fenugreek, coriander, and sacred basil. The cooking process begins with slowly caramelizing onions for hours until deeply browned, then building layers of flavor with garlic, ginger, and berbere. Hard-boiled eggs are added in the final stages, absorbing the rich, aromatic sauce. This combination provides complete proteins, complex carbohydrates, and numerous vitamins and minerals while representing Ethiopian Orthodox Christian traditions where food sharing creates spiritual bonds. The communal eating style, where everyone shares from one large injera, embodies the Ethiopian concept of community and hospitality.",
+  "region": "Ethiopia - Highlands",
+  "type": "Fermented Bread with Spiced Stew",
+  "origin": "Ancient Ethiopian highlands, perfected over millennia",
+  "ingredients": ["teff flour", "chicken", "berbere spice", "onions", "garlic", "ginger", "hard-boiled eggs"],
+  "preparation": "Multi-day fermentation and slow spice building",
+  "nutrition": "Complete proteins, complex carbs, iron, fiber, probiotics from fermentation",
+  "cultural_significance": "Ethiopian Orthodox traditions and communal dining philosophy",
+  "dietary": ["contains eggs", "fermented", "naturally gluten-free"],
+  "allergens": ["eggs"]
+},
+{
+  "id": "113",
+  "text": "Lebanese Kibbeh Nayyeh, often called 'Lebanese steak tartare,' represents the pinnacle of Middle Eastern raw meat cuisine where only the finest ingredients and masterful technique create a dish that celebrates both tradition and trust. This delicacy consists of the highest quality raw lamb, traditionally from the leg, mixed with fine bulgur wheat, minced onions, and a precise blend of spices including allspice, cinnamon, and black pepper. The meat must be impeccably fresh, hand-chopped to the perfect consistency, and served immediately while ice-cold. Traditional preparation involves pounding the meat with a wooden pestle until it reaches a smooth, almost paste-like texture, then incorporating the soaked and drained bulgur with experienced hands. The dish is typically garnished with fresh mint, parsley, and drizzled with extra virgin olive oil, served alongside fresh vegetables and pita bread. Kibbeh nayyeh provides high-quality protein, iron, and B-vitamins while representing Lebanese hospitality and the trust between host and guest. This dish embodies the Lebanese philosophy that the best ingredients require minimal manipulation to shine, showcasing the country's pastoral traditions and culinary confidence.",
+  "region": "Lebanon - Mountain Villages",
+  "type": "Raw Meat Delicacy",
+  "origin": "Ancient Lebanese mountain communities",
+  "ingredients": ["fresh raw lamb", "fine bulgur", "onions", "allspice", "mint", "parsley", "olive oil"],
+  "preparation": "Hand-chopped raw meat with precise spice blending",
+  "nutrition": "High-quality protein, iron, B-vitamins, traditional enzymes",
+  "cultural_significance": "Lebanese hospitality and trust between host and guest",
+  "dietary": ["contains raw meat", "contains gluten"],
+  "allergens": ["wheat"]
+},
+{
+  "id": "114",
+  "text": "Vietnamese Pho Bo, literally meaning 'beef noodle soup,' represents the soul of Vietnamese cuisine where a crystal-clear, deeply aromatic broth tells the story of French colonial influence, Chinese techniques, and pure Vietnamese ingenuity. This iconic soup begins with beef bones, particularly marrow and knuckle bones, charred over open flame then simmered for 12-24 hours with star anise, cinnamon, cardamom, fennel, and cloves to create a broth so clear and flavorful it seems to contain liquid essence. The dish emerged in northern Vietnam in the early 20th century, influenced by French pot-au-feu but adapted with local ingredients and Chinese noodle traditions. Fresh rice noodles (banh pho) provide the foundation, topped with thinly sliced raw beef that cooks instantly when the boiling broth is poured over. Traditional accompaniments include fresh herbs like cilantro, Thai basil, and saw leaf, along with bean sprouts, lime wedges, and chilies for customization. Pho provides complete nutrition with proteins, carbohydrates, and numerous vitamins while representing Vietnamese resilience and adaptability. This dish embodies the Vietnamese philosophy of balance - hot and cool, soft and crunchy, mild and spicy - creating harmony in every bowl.",
+  "region": "Vietnam - Northern Origin",
+  "type": "Aromatic Noodle Soup",
+  "origin": "Early 20th century Northern Vietnam, influenced by French and Chinese cuisines",
+  "ingredients": ["beef bones", "rice noodles", "star anise", "cinnamon", "raw beef", "fresh herbs", "bean sprouts"],
+  "preparation": "24-hour bone broth with complex spice infusion",
+  "nutrition": "Complete proteins, collagen, complex carbs, fresh herbs provide vitamins",
+  "cultural_significance": "Vietnamese resilience and culinary adaptability through colonial influences",
+  "dietary": ["contains beef", "gluten-free noodles"],
+  "allergens": ["none in traditional preparation"]
 }
 ]
